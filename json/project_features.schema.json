@@ -1,0 +1,63 @@
+{
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "title": "Project Features (by liledix4)",
+    "type": "object",
+    "required": ["list_of_features"],
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "title": "JSON schema",
+            "description": "#TBA",
+            "pattern": "^[0-9A-Za-z_\\-\\s./]+\\.schema\\.json$",
+            "minLength": 1
+        },
+        "load_json_files": {
+            "type": "array",
+            "title": "Load JSON files",
+            "description": "List of JSON files to load, for extending the list of project features.",
+            "items": {
+                "type": "string",
+                "title": "Path to JSON file to load"
+            }
+        },
+        "list_of_features": {
+            "type": "array",
+            "title": "List of project features",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "title": "Project feature",
+                "required": ["id", "feature_title"],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "title": "Unique ID of the project feature",
+                        "pattern": "^(?!_)[0-9a-z_]+(?<!_)$",
+                        "minLength": 1
+                    },
+                    "id_short": {
+                        "type": "string",
+                        "title": "Shortened unique ID of the project feature",
+                        "pattern": "^(?!_)[0-9a-z_]+(?<!_)$",
+                        "minLength": 1
+                    },
+                    "feature_title": {
+                        "type": "string",
+                        "title": "Title of the project feature",
+                        "minLength": 1
+                    },
+                    "subfeatures": {
+                        "type": "array",
+                        "title": "Sub-features",
+                        "items": {
+                            "type": "string",
+                            "title": "ID of another feature to refer to as a sub-feature",
+                            "pattern": "^(?!_)[0-9a-z_]+(?<!_)$",
+                            "minLength": 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

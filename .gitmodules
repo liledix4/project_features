@@ -1,0 +1,12 @@
+[submodule "gears/modules/js_xhr_ajax"]
+	path = gears/modules/js_xhr_ajax
+	url = https://github.com/liledix4/js_xhr_ajax
+[submodule "gears/modules/js_mime_presets"]
+	path = gears/modules/js_mime_presets
+	url = https://github.com/liledix4/js_mime_presets
+[submodule "gears/modules/js_load_series_of_files"]
+	path = gears/modules/js_load_series_of_files
+	url = https://github.com/liledix4/js_load_series_of_files
+[submodule "gears/modules/js_proper_location_hash"]
+	path = gears/modules/js_proper_location_hash
+	url = https://github.com/liledix4/js_proper_location_hash
