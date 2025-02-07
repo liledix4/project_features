@@ -1,11 +1,12 @@
 export function getListOfFeatures(arrayOfFiles) {
-    let listOfFeatures = [];
+  let listOfFeatures = [];
 
-    arrayOfFiles.forEach(file => {
-        file.list_of_features.forEach(feature => {
-            listOfFeatures.push(feature);
-        })
-    });
+  arrayOfFiles.forEach(file => {
+    if (file.content && file.content.list_of_features)
+      file.content.list_of_features.forEach(feature => {
+        listOfFeatures.push(feature);
+      })
+  });
 
-    return listOfFeatures;
+  return listOfFeatures;
 }
